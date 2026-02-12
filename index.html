@@ -1,53 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-
-<body class="sm">
-    <header>
-        <div class="bg-red-700 px-5 py-4 flex justify-between items-center">
-            <div class="text-white text-2xl font-semibold">faruk store</div>
-            <nav>
-                <ul class="text-white flex gap-5 capitalize font-semibold">
-                    <li><a href="#home" class="hover:bg-red-800  px-5 py-2 rounded shadow-lg">home</a></li>
-                    <li><a href="#home" class="hover:bg-red-800 px-4 py-2 rounded shadow-lg">services</a></li>
-                    <li><a href="#home" class="hover:bg-red-800 px-4 py-2 rounded shadow-lg">products</a></li>
-                    <li><a href="#home" class="hover:bg-red-800 px-4 py-2 rounded shadow-lg">contacts</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <!-- container section  -->
-    <div class="bg-red-800 py-28 text-center">
-        <h2 class="text-white text-3xl">welcome to you smart people!</h2>
-        <p class="text-white capitalize mt-10 text-xl">to get all the services you must have signup.</p>
-        <button onclick="signup()"
-            class="bg-white px-4 py-2 rounded mt-10 hover:text-white hover:bg-blue-700 border">signup</button>
-            
+<body class="bg-blue-700 flex justify-center items-center h-screen">
+    <div class="bg-blue-700 px-12 py-16 rounded-lg border-4 border-blue-500 shadow-lg flex flex-col justify-center items-center">
+        <h2 class="bg-blue-500 px-4 py-2 rounded-md border-blue-300 border-2 text-white capitalize text-xl shadow-lg mt-8">Addhaay's calculator</h2><br><br>
+        <input type="text" id="num1" placeholder="enter number" class="px-4 py-2 rounded-md border-blue-300 border-2 shadow-lg"><br><br>
+        <input type="text" id="num2" placeholder="enter number" class="px-4 py-2 rounded-md border-blue-300 border-2 shadow-lg"><br><br>
+        <div class="text-white text-xl">
+            <button onclick="add()" class="border px-2  rounded-md hover:bg-white hover:text-blue-500 font-bold">+</button>
+            <button onclick="subtract()" class="border px-2  rounded-md hover:bg-white hover:text-blue-500 font-bold">-</button>
+            <button onclick="multiplication()" class="border px-2  rounded-md hover:bg-white hover:text-blue-500 font-bold">*</button>
+            <button onclick="division()" class="border px-2  rounded-md hover:bg-white hover:text-blue-500 font-bold">/</button>
+            <button onclick="reset()" class="border px-2  rounded-md hover:bg-white hover:text-blue-500 font-bold">AC</button>
+        </div><br>
+        <p id="result" class="border-blue-300 border-2 px-12  mt-2 rounded-md text-blue-500 text-xl capitalize bg-white hover:bg-blue-500 hover:text-white cursor-pointer mb-8">0</p>
     </div>
-    <div class="bg-blue-600 border">
-        <h2 class="text-white text-center capitalize py-4 text-2xl pt-5">our services</h2>
-        <div class="bg-red-600 flex flex-col sm:flex-row justify-center items-center h-[300px] text-white capitalize">
-            <div class="bg-red-500 px-16 py-16 rounded-md shadow border m-2 cursor-pointer hover:bg-red-400 ">online services</div>
-            <div class="bg-red-500 px-16 py-16 rounded-md border m-2 cursor-pointer">products gallary</div>
-            <div class="bg-red-500 px-16 py-16 border rounded-md m-2 cursor-pointer">emergency services</div>
-        </div>
-    </div>
-    <footer class="bg-red-700 text-white py-6 text-center">
-        <p>&copy;2026 @| all right reserved</p>
-    </footer>
-
     <script>
-        function signup() {
-            window.location.href = "home.html";
+        function add() {
+            let num1 =Number(document.getElementById("num1").value);
+            let num2 =Number(document.getElementById("num2").value);
+            document.getElementById("result"). innerText = "result : " + (num1+num2);
+        }
+           function subtract() {
+            let num1 =Number(document.getElementById("num1").value);
+            let num2 =Number(document.getElementById("num2").value);
+            document.getElementById("result"). innerText = "result : " + (num1-num2);
+        }
+           function multiplication() {
+            let num1 =Number(document.getElementById("num1").value);
+            let num2 =Number(document.getElementById("num2").value);
+            document.getElementById("result"). innerText = "result : " + (num1*num2);
+        }
+           function division() {
+            let num1 =Number(document.getElementById("num1").value);
+            let num2 =Number(document.getElementById("num2").value);
+            document.getElementById("result"). innerText = "result : " + (num1/num2);
+        }
+           function reset() {
+        
+            document.getElementById("result"). innerText = "0";
         }
     </script>
-
+    
 </body>
-
 </html>
